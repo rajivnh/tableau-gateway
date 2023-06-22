@@ -1,0 +1,22 @@
+server:
+  port: 80
+  
+spring:
+  application:
+    name: tableau-gateway
+  cloud:
+    gateway:  
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+      routes:  
+      - id: jscript
+        uri: http://127.0.0.1:800
+        predicates:
+        - Path=/jscript/**          
+      - id: tableau
+        uri: http://127.0.0.1:4200
+        predicates:
+        - Path=/**                
