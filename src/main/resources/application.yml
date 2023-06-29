@@ -13,10 +13,10 @@ spring:
             allowedHeaders: "*"
       routes:  
       - id: jscript
-        uri: http://127.0.0.1:800
+        uri: http://localhost:81
         predicates:
-        - Path=/jscript/**          
+        - Path=/doc/**          
       - id: tableau
-        uri: http://127.0.0.1:4200
+        uri: http://localhost:82
         predicates:
         - Path=/**                
